@@ -1,6 +1,10 @@
 {{ define "main" }}
 
 {{ partial "article" . }}
+<!-- Add mermaid min js file -->
+{{ if (.Params.mermaid) }}
+{{ partial "mermaid.html" }}
+{{ end }}
 {{ partial "single_footer" . }}
 
 {{ end }}
