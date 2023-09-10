@@ -1,9 +1,12 @@
 <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>
+  var darkOrLight = "light";
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    darkOrLight = "dark";
+  }
   var config = {
     startOnLoad: true,
-    theme: '{{ if site.Params.mermaid.theme }}{{ site.Params.mermaid.theme }}{{ else }}dark{{ end }}',
-    align: '{{ if site.Params.mermaid.align }}{{ site.Params.mermaid.align }}{{ else }}center{{ end }}',
+    theme: darkOrLight,
   };
   mermaid.initialize(config);
 </script>
