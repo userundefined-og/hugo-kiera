@@ -1,24 +1,26 @@
 </main>
-    <footer>
-        <ul>
-            <li>
-                <h6>{{ if .Site.Copyright }}{{ .Site.Copyright | markdownify }} | {{ end }}
-                    {{ T "rendered" }} <a href="https://gohugo.io" title="Hugo">Hugo</a></h6>
-            </li>
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.footer }}
-                <li>
-                    <h6><a class="{{if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) }}active{{end}}" href="{{ .URL | relURL }}">
-                    <i class="fa-li fa {{ .Pre }} fa-lg"></i><span>{{ .Name }}</span>
-                    </a></h6>
-                </li>
-            {{ end }}
-        </ul>
-    </footer>
+<footer>
+  <ul>
+    <li>
+      <h6>{{ if .Site.Copyright }}{{ .Site.Copyright | markdownify }} | {{ end }}
+        {{ T "rendered" }} <a href="https://gohugo.io" title="Hugo">Hugo</a> and based on a fork of the <a
+          href="https://themes.gohugo.io/themes/hugo-kiera/">Kiera theme</a></h6>
+    </li>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.footer }}
+    <li>
+      <h6><a class="{{if or ($currentPage.IsMenuCurrent " footer" .) ($currentPage.HasMenuCurrent "footer" .)
+          }}active{{end}}" href="{{ .URL | relURL }}">
+          <i class="fa-li fa {{ .Pre }} fa-lg"></i><span>{{ .Name }}</span>
+        </a></h6>
+    </li>
+    {{ end }}
+  </ul>
+</footer>
 </div>
-<script src="{{ "js/scripts.js" | relURL }}"></script>
+<script src="{{ " js/scripts.js" | relURL }}"></script>
 {{ if .Site.GoogleAnalytics }}
-  {{ template "_internal/google_analytics.html" . }}
+{{ template "_internal/google_analytics.html" . }}
 {{ end }}
 {{ partial "user_footer" . }}
 </body>
