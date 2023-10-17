@@ -3,8 +3,12 @@
   <ul>
     <li>
       <h6>{{ if .Site.Copyright }}{{ .Site.Copyright | markdownify }} | {{ end }}
-        {{ T "rendered" }} <a href="https://gohugo.io" title="Hugo">Hugo</a> and based on a fork of the <a
-          href="https://themes.gohugo.io/themes/hugo-kiera/">Kiera theme</a></h6>
+        {{ T "rendered" }}
+        <a href="https://gohugo.io" title="Hugo">Hugo</a> and based on a fork of the <a
+          href="https://themes.gohugo.io/themes/hugo-kiera/">Kiera theme</a> |
+        <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="{{ .Site.Title }}">
+        <a href="{{.Site.BaseURL}}index.xml">{{ T "subscribe" }}</a>
+      </h6>
     </li>
     {{ $currentPage := . }}
     {{ range .Site.Menus.footer }}
